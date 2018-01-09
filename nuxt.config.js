@@ -1,3 +1,9 @@
+const nodeExternals = require('webpack-node-externals')
+const path = require('path')
+const resolve = (dir) => path.join(__dirname, dir)
+const bodyParser = require('body-parser')
+const session = require('express-session')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -13,6 +19,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  plugins: [
+    '~/plugins/buefy.js',
+    '~/plugins/vue-social-sharing.js'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +31,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': false
+      }
+    },
     /*
     ** Run ESLint on save
     */
@@ -34,5 +49,19 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  serverMiddleware: [
+    bodyParser.json(),
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    '~/api'
+  ],
+  modules: [
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/axios',
+  ]
 }

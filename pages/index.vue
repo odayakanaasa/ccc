@@ -101,7 +101,7 @@ export default {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/75954ef0d5e5f141e6d26fb6778c06b62d147d15/6c5fa/img/icon/icon-btc.svg',
         'coin': 'Bitcoin',
         'code': 'BTC',
-        'balance': 0,
+        'balance': 0.12345,
         'usd': 0,
         'rate': null
       },
@@ -109,7 +109,7 @@ export default {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/7bb77bd0b50eaa0315fbd550bc22da6d8a0296c1/7e5a4/img/icon/icon-eth.svg',
         'coin': 'Ethereum',
         'code': 'ETH',
-        'balance': 0.21007000,
+        'balance': 10.21007000,
         'usd': 0,
         'rate': null
       },
@@ -117,7 +117,7 @@ export default {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/4e509f5163f2f48b4888d09f4da5c65cd4ad6b61/6f84e/img/icon/icon-xrp.svg',
         'coin': 'Ripple',
         'code': 'XRP',
-        'balance': 216.000000,
+        'balance': 333216.000000,
         'usd': 0,
         'rate': null
       },
@@ -125,7 +125,7 @@ export default {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/f866f969c6e53a29e082528adf8b81675bd293c1/413ee/img/icon/icon-bch.svg',
         'coin': 'Bitcoin Cash',
         'code': 'BCH',
-        'balance': 0,
+        'balance': 2,
         'usd': 0,
         'rate': null
       },

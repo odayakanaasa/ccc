@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar is-transparent">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="/">
           <img src="/logo.png" alt="Cex.io Curyptocurrency Checker" width="112" height="28">
         </a>
         <a href="https://github.com/yuki-nakamura" target="_blank" title="Github" class="navbar-item"><span class="icon"><i class="fa fa-github fa-lg"></i></span></a>

@@ -131,7 +131,7 @@ export default {
   data () {
     return {
       currencies: { 'BTC': 0, 'ETH': 0, 'XRP': 0, 'BCH': 0 },
-      usd: 169.03,
+      usd: 6.86,
       data: [],
       total: 0,
       loading: false
@@ -152,7 +152,7 @@ export default {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/7bb77bd0b50eaa0315fbd550bc22da6d8a0296c1/7e5a4/img/icon/icon-eth.svg',
         'coin': 'Ethereum',
         'code': 'ETH',
-        'balance': 0.21007000,
+        'balance': 0.31507000,
         'usd': 0,
         'rate': null
       },

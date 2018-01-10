@@ -77,8 +77,10 @@
       </div>
     </section>
     
-    <section class="container">
-      <nuxt/>
+    <section class="section">
+      <div class="container">
+        <nuxt/>
+      </div>
     </section>
     
     <footer class="footer">

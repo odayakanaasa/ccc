@@ -79,6 +79,10 @@
                     {{ props.row.balance }}
                 </b-table-column>
 
+                <b-table-column label="rate" centered>
+                    {{ props.row.rate }}
+                </b-table-column>
+
                 <b-table-column label="usd" centered>
                     {{ props.row.usd }}
                 </b-table-column>
@@ -98,7 +102,7 @@
             </template>
 
             <template slot="footer">
-                <th class="is-hidden-mobile" colspan="3">
+                <th class="is-hidden-mobile" colspan="4">
                     <div class="th-wrap is-numeric"> Sub Total </div>
                 </th>
                 <th class="is-hidden-mobile">
@@ -146,7 +150,8 @@ export default {
         'code': 'BTC',
         'balance': 0,
         'usd': 0,
-        'rate': null
+        'rate': 0,
+        'rate_info': null
       },
       {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/7bb77bd0b50eaa0315fbd550bc22da6d8a0296c1/7e5a4/img/icon/icon-eth.svg',
@@ -154,7 +159,8 @@ export default {
         'code': 'ETH',
         'balance': 0.31507000,
         'usd': 0,
-        'rate': null
+        'rate': 0,
+        'rate_info': null
       },
       {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/4e509f5163f2f48b4888d09f4da5c65cd4ad6b61/6f84e/img/icon/icon-xrp.svg',
@@ -162,7 +168,8 @@ export default {
         'code': 'XRP',
         'balance': 216.000000,
         'usd': 0,
-        'rate': null
+        'rate': 0,
+        'rate_info': null
       },
       {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/f866f969c6e53a29e082528adf8b81675bd293c1/413ee/img/icon/icon-bch.svg',
@@ -170,21 +177,24 @@ export default {
         'code': 'BCH',
         'balance': 0,
         'usd': 0,
-        'rate': null
-      },
-      {
-        'icon': 'https://d33wubrfki0l68.cloudfront.net/a95958664e4a3c70c066e632a4199fa33b968feb/ba37d/img/icon/icon-dash.svg',
-        'coin': 'DASH',
-        'balance': 0,
-        'usd': 0,
-        'rate': null
+        'rate': 0,
+        'rate_info': null
       }
+      // {
+      //   'icon': 'https://d33wubrfki0l68.cloudfront.net/a95958664e4a3c70c066e632a4199fa33b968feb/ba37d/img/icon/icon-dash.svg',
+      //   'coin': 'DASH',
+      //   'balance': 0,
+      //   'usd': 0,
+      //   'rate': 0,
+      //   'rate_info': null
+      // }
     ]
     this.total = 0
     for (const i in this.data) {
       let d = this.data[i]
       let rate = await this.tickerRequest(d.code)
-      d.rate = rate
+      d.rate_info = rate
+      d.rate = rate.bid
       if (d.balance > 0) {
         d.usd = d.balance * rate.bid
         this.total += d.usd

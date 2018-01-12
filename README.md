@@ -10,7 +10,7 @@ Cex.ioの暗号通貨の残高管理を行うツール。
 ## Requirement
 
 - [Vue.js](https://github.com/vuejs/vue)
-- [Nuxs.js](https://github.com/nuxt/nuxtjs.org)
+- [Nuxt.js](https://github.com/nuxt/nuxtjs.org)
 - Heroku
 
 ## Build Setup

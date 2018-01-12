@@ -1,22 +1,40 @@
 # ccc
 
-> Nuxt.js project
+> Cex.io Cryptocurrency Balance Management
+
+## Description
+
+Cex.ioの暗号通貨の残高管理を行うツール。
+（完全に個人用）
+
+## Requirement
+
+- [Vue.js](https://github.com/vuejs/vue)
+- [Nuxs.js](https://github.com/nuxt/nuxtjs.org)
+- Heroku
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build
-$ npm start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ npm run generate
+$ yarn generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Author
+
+[@yuuki_0606](https://twitter.com/yuuki_0606)
+
+## License
+
+[MIT](http://b4b4r07.mit-license.org)
+

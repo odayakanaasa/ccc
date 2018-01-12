@@ -142,7 +142,6 @@ export default {
     }
   },
   async mounted () {
-    this.loading = true
     this.data = [
       {
         'icon': 'https://d33wubrfki0l68.cloudfront.net/75954ef0d5e5f141e6d26fb6778c06b62d147d15/6c5fa/img/icon/icon-btc.svg',
@@ -189,23 +188,30 @@ export default {
       //   'rate_info': null
       // }
     ]
-    this.total = 0
-    for (const i in this.data) {
-      let d = this.data[i]
-      let rate = await this.tickerRequest(d.code)
-      d.rate_info = rate
-      d.rate = rate.bid
-      if (d.balance > 0) {
-        d.usd = d.balance * rate.bid
-        this.total += d.usd
-      }
-      this.data[i] = d
-
-      this.currencies[d.code] = rate.bid
-    }
-    this.loading = false
+    this.refresh()
+    setInterval(() => {
+      this.refresh()
+    }, 30000)
   },
   methods: {
+    async refresh () {
+      this.loading = true
+      this.total = 0
+      for (const i in this.data) {
+        let d = this.data[i]
+        let rate = await this.tickerRequest(d.code)
+        d.rate_info = rate
+        d.rate = rate.bid
+        if (d.balance > 0) {
+          d.usd = d.balance * rate.bid
+          this.total += d.usd
+        }
+        this.data[i] = d
+
+        this.currencies[d.code] = rate.bid
+      }
+      this.loading = false
+    },
     async tickerRequest (code) {
       let url = encodeURIComponent('https://cex.io/api/ticker/' + code + '/USD')
       let res = await this.$axios.$get('/proxy/' + url)
